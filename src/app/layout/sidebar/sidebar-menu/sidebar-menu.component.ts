@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, ContentChildren, QueryList} from '@angular/core';
+import {SidebarMenuItemComponent} from './sidebar-menu-item/sidebar-menu-item.component';
 
 @Component({
   selector: 'app-sidebar-menu',
@@ -6,4 +7,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./sidebar-menu.component.scss']
 })
 export class SidebarMenuComponent {
+
+  @ContentChildren(SidebarMenuItemComponent) public menuItems: QueryList<SidebarMenuItemComponent>;
 }

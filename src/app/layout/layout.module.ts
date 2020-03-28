@@ -9,6 +9,7 @@ import {SidebarBannerComponent} from './sidebar/sidebar-banner/sidebar-banner.co
 import {SidebarMenuComponent} from './sidebar/sidebar-menu/sidebar-menu.component';
 import {SidebarMenuItemComponent} from './sidebar/sidebar-menu/sidebar-menu-item/sidebar-menu-item.component';
 import {ContentComponent} from './content/content.component';
+import {SharedModule} from '../shared/shared.module';
 
 const COMPONENTS: Array<Type<any> | any[]> = [
   HeaderComponent,
@@ -27,7 +28,8 @@ const COMPONENTS: Array<Type<any> | any[]> = [
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   exports: [
     ...COMPONENTS

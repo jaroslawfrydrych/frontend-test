@@ -1,0 +1,11 @@
+@import "shared";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  order: 0;
+  flex: 0 0 240px;
+  align-self: auto;
+  width: em($sizeBarWidth);
+  background-color: $backgroundColorSecondary;
+}

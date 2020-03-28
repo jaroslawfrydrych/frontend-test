@@ -1,0 +1,11 @@
+@import "../item-list/item-list-item/item-list-item.component";
+
+.list-item {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .item-title {
+    padding-bottom: em(15);
+  }
+}

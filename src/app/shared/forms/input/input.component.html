@@ -1,1 +1,8 @@
-<p>input works!</p>
+<div class="form-control box-style">
+  <input [type]="type"
+         [placeholder]="placeholder">
+  <div class="icon" *ngIf="icon">
+    <img [src]="'/assets/svg/' + icon + '.svg'"
+         [alt]="icon">
+  </div>
+</div>

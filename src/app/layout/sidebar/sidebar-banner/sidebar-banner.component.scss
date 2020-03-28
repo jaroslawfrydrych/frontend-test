@@ -1,0 +1,21 @@
+@import "shared";
+
+:host {
+  margin-top: em(41);
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+img {
+  width: em(160);
+}
+
+span {
+  padding-top: em(10);
+}

@@ -1,0 +1,41 @@
+@import "shared";
+
+:host {
+  display: flex;
+  width: 100%;
+}
+
+.form-control {
+  position: relative;
+  width: 100%;
+  height: em($inputHeight);
+
+  input {
+    position: relative;
+    padding: 0 em(20);
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border-style: none;
+    z-index: 1;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    right: em(20);
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::placeholder {
+  color: $placeholderColor;
+}

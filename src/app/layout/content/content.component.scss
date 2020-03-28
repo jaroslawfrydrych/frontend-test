@@ -1,0 +1,17 @@
+@import "shared";
+
+:host {
+  order: 0;
+  flex: 1 0 auto;
+  align-self: auto;
+  padding: em(15);
+
+  @media (min-width: 768px) {
+    padding: em(30) em(40);
+  }
+
+
+  @media (min-width: 992px) {
+    padding: em(41) em(70);
+  }
+}

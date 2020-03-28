@@ -1,0 +1,22 @@
+@import "shared";
+
+:host {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: em($headerHeight);
+  background-color: $backgroundColorSecondary;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
+  padding: 0 em(40);
+  border: {
+    style: none none solid none;
+    width: 1px;
+    color: $borderColor;
+  }
+}

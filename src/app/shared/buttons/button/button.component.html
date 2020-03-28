@@ -1,1 +1,4 @@
-<p>button works!</p>
+<button [ngClass]="'color-' + color"
+        [class.no-padding]="noPadding !== false">
+  <ng-content></ng-content>
+</button>

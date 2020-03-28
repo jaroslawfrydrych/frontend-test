@@ -1,0 +1,33 @@
+@import "shared";
+
+:host {
+  color: $textColorSecondary;
+  margin-top: em(40);
+  display: flex;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+
+  ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    li {
+      display: flex;
+      margin: 0;
+      padding: em(6) 0;
+      width: 100%;
+
+      a {
+        width: 100%;
+        padding: em(10) em(40);
+      }
+    }
+  }
+}

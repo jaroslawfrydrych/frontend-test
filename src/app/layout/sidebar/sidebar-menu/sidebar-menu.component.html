@@ -1,1 +1,9 @@
-<p>sidebar-menu works!</p>
+<nav>
+  <ul>
+    <li *ngFor="let menuItem of menuItems">
+      <a href="#">
+        <ng-container [ngTemplateOutlet]="menuItem.content"></ng-container>
+      </a>
+    </li>
+  </ul>
+</nav>

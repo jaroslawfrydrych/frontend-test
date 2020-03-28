@@ -1,0 +1,43 @@
+@import "shared";
+
+button {
+  -webkit-appearance: none;
+  border-style: none;
+  font-size: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  min-height: em($inputHeight);
+  padding: 0 em(15);
+  border: {
+    style: none;
+    radius: em($borderRadius);
+  }
+
+  @media (min-width: 768px) {
+    min-width: em(115);
+  }
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  &.no-padding {
+    margin: 0;
+    padding: 0;
+  }
+
+  &.color- {
+    &primary {
+      background-color: $buttonColorPrimary;
+      color: $textColorAccent;
+    }
+
+    &transparent {
+      background-color: transparent;
+    }
+  }
+}

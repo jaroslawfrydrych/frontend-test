@@ -1,0 +1,9 @@
+@import "./variables";
+
+@function emUnitless($value, $reference: $baseFontSize) {
+  @return $value / $reference;
+}
+
+@function em($value, $reference: $baseFontSize) {
+  @return #{emUnitless($value, $reference)}em;
+}
