@@ -1,10 +1,16 @@
 import {Resolve} from '@angular/router';
-import {Observable, of} from 'rxjs';
-import {ItemGroup} from '../model/item-group';
+import {Observable} from 'rxjs';
+import {ItemsService} from '../items.service';
+import {Item} from '../model/item';
+import {Injectable} from '@angular/core';
 
-export class ItemListResolver implements Resolve<ItemGroup[]> {
+@Injectable()
+export class ItemListResolver implements Resolve<Item[]> {
 
-  resolve(): Observable<ItemGroup[]> {
-    return of([]);
+  constructor(private itemsService: ItemsService) {
+  }
+
+  public resolve(): Observable<Item[]> {
+    return this.itemsService.getItemsListFromApi();
   }
 }

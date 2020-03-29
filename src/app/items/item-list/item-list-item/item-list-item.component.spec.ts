@@ -1,5 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ItemListItemComponent } from './item-list-item.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ItemListItemComponent} from './item-list-item.component';
+import {RouterModule} from '@angular/router';
+import {SharedModule} from '../../../shared/shared.module';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('ItemListItemComponent', () => {
   let component: ItemListItemComponent;
@@ -7,9 +10,15 @@ describe('ItemListItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemListItemComponent ]
+      imports: [
+        RouterTestingModule,
+        SharedModule
+      ],
+      declarations: [
+        ItemListItemComponent
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

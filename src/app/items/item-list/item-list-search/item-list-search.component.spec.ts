@@ -1,5 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ItemListSearchComponent } from './item-list-search.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ItemListSearchComponent} from './item-list-search.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {SharedModule} from '../../../shared/shared.module';
 
 describe('ItemListSearchComponent', () => {
   let component: ItemListSearchComponent;
@@ -7,18 +9,21 @@ describe('ItemListSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemListSearchComponent ]
+      imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        SharedModule
+      ],
+      declarations: [
+        ItemListSearchComponent
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ItemListSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

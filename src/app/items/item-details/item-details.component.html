@@ -1,5 +1,5 @@
-<div class="list-item box-style">
-  <div class="item-title">Details of: Item 1</div>
-  <div class="item-details">Parent id: 16</div>
+<div class="list-item box-style" *ngIf="itemDetails">
+  <div class="item-title">Details of: {{itemDetails.title}}</div>
+  <div class="item-details">Parent id: {{itemDetails.parent_id}}</div>
 </div>
 

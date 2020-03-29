@@ -1,5 +1,7 @@
-<app-item-list-search></app-item-list-search>
-<app-item-list-item></app-item-list-item>
-<app-item-list-item></app-item-list-item>
-<app-item-list-item></app-item-list-item>
-<app-item-list-item></app-item-list-item>
+<app-item-list-search (valueChange)="onSearchTextChange($event)"></app-item-list-search>
+<ng-container *ngIf="(itemsList | async)?.length; else noResultsFound">
+  <app-item-list-item *ngFor="let item of itemsList | async"
+                      [item]="item"></app-item-list-item>
+</ng-container>
+
+<ng-template #noResultsFound><p class="no-results">Sorry, no results found. Try a different search criteria.</p></ng-template>

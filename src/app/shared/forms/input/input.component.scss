@@ -24,16 +24,6 @@
       outline: none;
     }
   }
-
-  .icon {
-    position: absolute;
-    top: 0;
-    right: em(20);
-    bottom: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
 }
 
 ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::placeholder {

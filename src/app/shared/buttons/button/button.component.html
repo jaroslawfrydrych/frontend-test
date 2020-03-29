@@ -1,4 +1,5 @@
-<button [ngClass]="'color-' + color"
+<button (click)="handleClick($event)"
+        [ngClass]="'color-' + color"
         [class.no-padding]="noPadding !== false">
   <ng-content></ng-content>
 </button>

@@ -7,7 +7,7 @@ const mockButtonContentText = 'Mocked button';
 
 @Component({
   template: `
-    <app-button (click)="onButtonClick();">{{buttonText}}</app-button>
+      <app-button (buttonClick)="onButtonClick();">{{buttonText}}</app-button>
   `
 })
 class MockButtonComponent {

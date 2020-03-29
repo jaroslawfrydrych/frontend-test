@@ -1,5 +1,11 @@
-<div class="list-item box-style">
-  <div class="item-title">Item 1</div>
-  <app-button>Button</app-button>
+<div class="list-item box-style"
+     [class.blurred]="item.blurred"
+     *ngIf="item">
+  <div class="item-title">{{item.title}}</div>
+  <app-button (buttonClick)="navigateToItem(item.id)">Button</app-button>
 </div>
 
+<div class="children" *ngIf="item && item.children">
+  <app-item-list-item *ngFor="let child of item.children"
+                      [item]="child"></app-item-list-item>
+</div>

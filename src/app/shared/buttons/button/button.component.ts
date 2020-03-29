@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -13,4 +13,14 @@ export class ButtonComponent {
    */
   @Input() public color: 'primary' | 'transparent' = 'primary';
   @Input() public noPadding = false;
+  @Output() public buttonClick: EventEmitter<null> = new EventEmitter<null>();
+
+  public handleClick(event?: MouseEvent | any): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    this.buttonClick.emit(null);
+  }
 }

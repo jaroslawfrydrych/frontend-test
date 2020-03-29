@@ -1,5 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ItemListComponent } from './item-list.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ItemListComponent} from './item-list.component';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('ItemListComponent', () => {
   let component: ItemListComponent;
@@ -7,9 +8,14 @@ describe('ItemListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemListComponent ]
+      imports: [
+        HttpClientTestingModule
+      ],
+      declarations: [
+        ItemListComponent
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

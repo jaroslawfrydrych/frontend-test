@@ -1,5 +1,7 @@
 <div class="form-control box-style">
-  <input [type]="type"
+  <input [formControl]="control"
+         [name]="formControlName"
+         [type]="type"
          [placeholder]="placeholder">
   <div class="icon" *ngIf="icon">
     <img [src]="'/assets/svg/' + icon + '.svg'"

@@ -2,9 +2,11 @@ import {TestBed} from '@angular/core/testing';
 import {ItemsService} from './items.service';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {Item} from './model/item';
+import {EnvironmentService} from '../services/environment.service';
 
 describe('ItemsService', () => {
   let itemsService: ItemsService;
+  let environmentService: EnvironmentService;
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
@@ -14,6 +16,7 @@ describe('ItemsService', () => {
       ]
     });
     itemsService = TestBed.inject(ItemsService);
+    environmentService = TestBed.inject(EnvironmentService);
     httpMock = TestBed.inject(HttpTestingController);
   });
 
@@ -39,13 +42,13 @@ describe('ItemsService', () => {
       }
     ];
 
-    itemsService.getItemsFromApi()
+    itemsService.getItemsListFromApi()
       .subscribe((items: Item[]) => {
         expect(items.length).toBe(2);
         expect(items).toEqual(mockedItems);
       });
 
-    const req = httpMock.expectOne(`/items`);
+    const req = httpMock.expectOne(environmentService.apiBasePath + `/items`);
     expect(req.request.method).toBe('GET');
     req.flush(mockedItems);
   });

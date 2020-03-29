@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ItemsService} from '../items.service';
+import {Observable} from 'rxjs';
+import {ItemGroup} from '../model/item-group';
 
 @Component({
   selector: 'app-item-list',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemListComponent implements OnInit {
 
-  constructor() { }
+  public itemsList: Observable<ItemGroup[]>;
 
-  ngOnInit(): void {
+  constructor(private itemService: ItemsService) { }
+
+  public ngOnInit(): void {
+    this.onSearchTextChange();
   }
 
+  public onSearchTextChange(text?: string) {
+    this.itemsList = this.itemService.getItemsList(text);
+  }
 }
