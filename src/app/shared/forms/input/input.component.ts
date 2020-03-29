@@ -1,11 +1,12 @@
 import {Component, Input} from '@angular/core';
+import {BaseFormControl} from '../base-form-control/base-form-control';
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss']
 })
-export class InputComponent {
+export class InputComponent extends BaseFormControl {
 
   /**
    * Like in buttons, typing for types are hardcoded here in purpose. I decided not to use enum here because of better IDE autocomplete

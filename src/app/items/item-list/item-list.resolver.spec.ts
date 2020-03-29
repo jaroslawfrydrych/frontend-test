@@ -5,7 +5,11 @@ describe('ItemListResolver', () => {
   let service: ItemListResolver;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [
+        ItemListResolver
+      ]
+    });
     service = TestBed.inject(ItemListResolver);
   });
 

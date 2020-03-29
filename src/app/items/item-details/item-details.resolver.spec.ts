@@ -1,11 +1,15 @@
-import { TestBed } from '@angular/core/testing';
-import { ItemDetailsResolver } from './item-details.resolver';
+import {TestBed} from '@angular/core/testing';
+import {ItemDetailsResolver} from './item-details.resolver';
 
 describe('ItemDetailsService', () => {
   let service: ItemDetailsResolver;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [
+        ItemDetailsResolver
+      ]
+    });
     service = TestBed.inject(ItemDetailsResolver);
   });
 
